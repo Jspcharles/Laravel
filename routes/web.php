@@ -13,11 +13,7 @@
 
 Route::get('/', function () {
 
-	$tasks = [
-		'Go to the store',
-		'Buy something',
-		'Make it something'
-	];
+    $tasks = DB::table('tasks')->latest()->get();
 
     return view('welcome', compact('tasks'));
 });
